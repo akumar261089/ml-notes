@@ -2,9 +2,38 @@
 
 ## Machine Learning Specialization
 
+> Field of study that gives computers the ability to learn without being explicitly programmed. -- Arthur Samuel.
+>
+> ####Types of Machine learning
+>
+>- Supervised Learning
+>- Unsupervised Learning
+>- Recommender Systems
+>- Reinforcement Learning
+
+### Supervised Vs Unsupervised
+
+>input to output learning.
+
+#### Type of Supervised learning based on output
+
+- Regression(can predict any number(infinite) as output)
+- Classification(can predict only limited set of possible outputs like -0,1,2 or category/class two or more)
+
+#### Type of Unsupervised learning
+
+- Clustering(Group similar data points together)
+- Anomaly Detection(Find unusual data points)
+- Dimensionality Reduction(Compress data using fewer numbers)
+
 ### Supervised Machine Learning: Regression and Classification
 
 <https://www.coursera.org/learn/machine-learning/home/week/1>
+
+#### Linear regression Type of regression model
+
+We have a training set with x as feature or input variable & we have y as output variable or target variable. m is number of training examples
+Single training example is called as (x,y) and i<sup>th</sup> one is called a (x<sup>i</sup>,y<sup>i</sup>)
 
 ### Advanced Learning Algorithms
 
@@ -64,7 +93,7 @@
 
 <https://www.coursera.org/learn/machine-learning-data-lifecycle-in-production/home/week/1>
 
-### Machine Learning Modeling Pipelines in Production
+### Machine Learning Modelling Pipelines in Production
 
 <https://www.coursera.org/learn/machine-learning-modeling-pipelines-in-production/home/week/1>
 
