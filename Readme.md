@@ -5,8 +5,8 @@
 [Coursera](https://www.coursera.org/specializations/machine-learning-introduction)
 
 - [Supervised Machine Learning: Regression and Classification](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/)
-- Advanced Learning Algorithms
-- Unsupervised Learning, Recommenders, Reinforcement Learning
+- [Advanced Learning Algorithms](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/)
+- [Unsupervised Learning, Recommenders, Reinforcement Learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning%2C%20Recommenders%2C%20Reinforcement%20Learning/)
 
 ## [Deep Learning Specialization](/Deep%20Learning%20Specialization/)
 
