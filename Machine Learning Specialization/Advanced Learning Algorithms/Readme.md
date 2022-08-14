@@ -4,11 +4,11 @@
 
 a vector activation = g(x) = sigmoid =  1/(1+e<sup>-x</sup>)
 
-a layer can have one or more neurons
-                                            a
-Input layer ---------> hidden layer/layers---------> output layer
-Feature Vector X                                   Vector Y
-Layer 0                 Layer 1/2/3                   Layer 4
+a layer can have one or more neurons  
+                                            a  
+Input layer ---------> hidden layer/layers---------> output layer  
+Feature Vector X                                   Vector Y  
+Layer 0                 Layer 1/2/3                   Layer 4  
 
 final layer or output layer have one neuron
 
@@ -16,45 +16,46 @@ Number of hidden layers and number of neurons in hidden layers are architecture 
 
 ### Demand prediction
 
-X = [price, shipping cost, marketing, material]
-L1 activations  =[affordablity(price, shipping cost),awareness(marketing), quality(Price, material)]
+X = [price, shipping cost, marketing, material]  
+L1 activations  =[affordablity(price, shipping cost),awareness(marketing), quality(Price, material)]  
 OL = probablity of being top seller
 
 ### Face recognition
 
-eg 1000x1000 pixel image
-vector X = 1000000 elements
+eg 1000x1000 pixel image  
+vector X = 1000000 elements  
 
-L1 = looking for short lines or edges
-L2 = group together to figure part of faces - eyes nose
-L3 = different part of faces - shapes and size
+L1 = looking for short lines or edges  
+L2 = group together to figure part of faces - eyes nose  
+L3 = different part of faces - shapes and size  
 
 feeding different data NL learns automatically
 
 ### how to build a layer of neuron
-g = sigmoid function =  1/(1+e<sup>-z</sup>)
-z = W.x + b
 
-for layer 1 vec a<sup>[1]</sup> = [0.3,0.7,0.2]
-a<sub>1</sub><sup>[1]</sup> = g(W<sub>1</sub><sup>[1]</sup>.x+b<sub>1</sub><sup>[1]</sup>)=0.3
-a<sub>2</sub><sup>[1]</sup> = g(W<sub>2</sub><sup>[1]</sup>.x+b<sub>2</sub><sup>[1]</sup>)=0.7
-a<sub>3</sub><sup>[1]</sup> = g(W<sub>3</sub><sup>[1]</sup>.x+b<sub>3</sub><sup>[1]</sup>)=0.2
+g = sigmoid function =  1/(1+e<sup>-z</sup>)  
+z = W.x + b  
 
-for layer 2 vec a<sup>[2]</sup> = [0.84]
-a<sub>1</sub><sup>[2]</sup> = g(W<sub>1</sub><sup>[2]</sup>.a<sup>[1]</sup>+b<sub>2</sub><sup>[2]</sup>)=0.84
+for layer 1 vec a<sup>[1]</sup> = [0.3,0.7,0.2]  
+a<sub>1</sub><sup>[1]</sup> = g(W<sub>1</sub><sup>[1]</sup>.x+b<sub>1</sub><sup>[1]</sup>)=0.3  
+a<sub>2</sub><sup>[1]</sup> = g(W<sub>2</sub><sup>[1]</sup>.x+b<sub>2</sub><sup>[1]</sup>)=0.7  
+a<sub>3</sub><sup>[1]</sup> = g(W<sub>3</sub><sup>[1]</sup>.x+b<sub>3</sub><sup>[1]</sup>)=0.2  
 
-if (a<sup>[2]</sup> >= 0.5)
-yes: ŷ = 1
-no: ŷ =0
+for layer 2 vec a<sup>[2]</sup> = [0.84]  
+a<sub>1</sub><sup>[2]</sup> = g(W<sub>1</sub><sup>[2]</sup>.a<sup>[1]</sup>+b<sub>2</sub><sup>[2]</sup>)=0.84  
+
+if (a<sup>[2]</sup> >= 0.5)  
+yes: ŷ = 1  
+no: ŷ =0  
 
 ## Complex neural networks activation vector computation
 
 a<sub>j</sub><sup>[l]</sup> = g(vec W<sub>j</sub><sup>[l]</sup>.vec a<sup>[l-1]</sup> + b<sub>j</sub><sup>[l]</sup>)
 
-l layer
-j unit of neuron
-g activation function = sigmoid function
-vec X = vec a<sup>[0]</sup>
+l layer  
+j unit of neuron  
+g activation function = sigmoid function  
+vec X = vec a<sup>[0]</sup>  
 
 ## Neural network to make predections or inferences
 
@@ -62,40 +63,40 @@ vec X = vec a<sup>[0]</sup>
 
 8x8 pixel -
 
-255 255 255 255 255 255 255 255
-255 255 255     255 255 255 255
-255 255         255 255 255 255
-255 255 255     255 255 255 255
-255 255 255     255 255 255 255
-255 255 255     255 255 255 255
-255 255             255 255 255
-255 255 255 255 255 255 255 255
+255 255 255 255 255 255 255 255  
+255 255 255     255 255 255 255  
+255 255         255 255 255 255  
+255 255 255     255 255 255 255  
+255 255 255     255 255 255 255  
+255 255 255     255 255 255 255  
+255 255             255 255 255  
+255 255 255 255 255 255 255 255  
 
 2 hidden layers
 
-Layer 0 = 8x8 = 64 values in vec X
-Layer 1 = 25 units
-Layer 2 = 15 uints
-Layer 3 = 1 unit
+Layer 0 = 8x8 = 64 values in vec X  
+Layer 1 = 25 units  
+Layer 2 = 15 uints  
+Layer 3 = 1 unit  
 
-vec a<sup>[1]</sup> = [ g(W<sub>1</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>1</sub><sup>[1]</sup>),
-                    g(W<sub>2</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>2</sub><sup>[1]</sup>)
-                    :
-                    :
-                     g(W<sub>25</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>25</sub><sup>[1]</sup>) ]
+vec a<sup>[1]</sup> = [ g(W<sub>1</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>1</sub><sup>[1]</sup>),  
+                    g(W<sub>2</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>2</sub><sup>[1]</sup>)  
+                    :  
+                    :  
+                     g(W<sub>25</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>25</sub><sup>[1]</sup>) ]  
 
 
-vec a<sup>[2]</sup> = [ g(W<sub>1</sub><sup>[2]</sup>.vec a<sup>[1]</sup>+b<sub>1</sub><sup>[2]</sup>),
-                    g(W<sub>2</sub><sup>[2]</sup>.vec a<sup>[1]</sup>+b<sub>2</sub><sup>[2]</sup>)
-                    :
-                    :
-                     g(W<sub>15</sub><sup>[2]</sup>.vec a<sup>[1]</sup>+b<sub>25</sub><sup>[2]</sup>) ]
+vec a<sup>[2]</sup> = [ g(W<sub>1</sub><sup>[2]</sup>.vec a<sup>[1]</sup>+b<sub>1</sub><sup>[2]</sup>),  
+                    g(W<sub>2</sub><sup>[2]</sup>.vec a<sup>[1]</sup>+b<sub>2</sub><sup>[2]</sup>)  
+                    :  
+                    :  
+                     g(W<sub>15</sub><sup>[2]</sup>.vec a<sup>[1]</sup>+b<sub>25</sub><sup>[2]</sup>) ]  
 
-a<sup>[3]</sup> = [ g(W<sub>1</sub><sup>[3]</sup>.vec a<sup>[2]</sup>+b<sub>1</sub><sup>[3]</sup>)]
+a<sup>[3]</sup> = [ g(W<sub>1</sub><sup>[3]</sup>.vec a<sup>[2]</sup>+b<sub>1</sub><sup>[3]</sup>)]  
 
-if (a<sup>[3]</sup> >= 0.5)
-yes: ŷ = 1
-no: ŷ =0
+if (a<sup>[3]</sup> >= 0.5)  
+yes: ŷ = 1  
+no: ŷ =0  
 
 This is called forward propagation as we are moving form left to right
 
@@ -103,11 +104,12 @@ This is called forward propagation as we are moving form left to right
 
 ### For coffee roasting check if this will give good coffee or not
 
-Temp = 200
+Temp = 200  
 duration = 17
 
-``` x = np.array([[200.0,17.0]])
-layer_1 = Dense(units=3, activation='sigmoid')
+```python
+x = np.array([[200.0,17.0]])
+layer_1 = Dense(units=3, activation='sigmoid')  
 a1 = layer_1(x)
 
 layer_2 = Dense(units=1, activation='sigmoid')
@@ -121,7 +123,8 @@ else:
 
 ### For digit prediction
 
-``` x = np.array([[255,255,.......255]])
+```python
+x = np.array([[255,255,.......255]])
 layer_1 = Dense(units=25, activation='sigmoid')
 a1 = layer_1(x)
 
@@ -142,10 +145,10 @@ else:
 
 2D matrix 2X3
 
-1 2 3
+1 2 3  
 4 5 6
 
-x = np.array([[1,2,3],
+x = np.array([[1,2,3],  
               [4,5,6]])
 
 2D matrix 1X2
@@ -154,14 +157,14 @@ x = np.array([[200.0,17.0]])
 
 2D matrix 2X1
 
-x = np.array([[200.0],
+x = np.array([[200.0],  
               [17.0]])
 
 1D Vector
 
 x = np.array([200.0,17.0])
 
-Linear regression we use vector
+Linear regression we use vector  
 tensor flow we use matrix
 
 to convert from tensor to numpy matrix
@@ -170,7 +173,8 @@ a3.numpy()
 
 ## Build neural network in tensor flow
 
-``` layer_1 = Dense(units=3, activation='sigmoid')
+```python
+layer_1 = Dense(units=3, activation='sigmoid')
 layer_2 = Dense(units=1, activation='sigmoid')
 
 model = Sequential([layer_1,layer_2])
@@ -191,7 +195,8 @@ model.fit(x,y)
 model.predict(x_new)
 ```
 
-``` layer_1 = Dense(units=25, activation='sigmoid')
+```python
+layer_1 = Dense(units=25, activation='sigmoid')
 layer_2 = Dense(units=15, activation='sigmoid')
 layer_3 = Dense(units=1, activation='sigmoid')
 
