@@ -98,6 +98,25 @@ Learing rate  -- 0.001 or 0.003 or 0.01 or 0.03 or 0.1 or 0.3 or 1
 
 logistic regression - sigmoid function
 
+Decision boundary
+
+Cost function for logisdtic regression -squared error cost
+J(w,b) =  (1/m) * sum over i = 1 to m 1/2( ŷ<sup>(i)</sup> - y<sup>(i)</sup>)<sup>2</sup>
+
+Loss funct
+
+- log(f<sub>W,b</sub>(X<sup>(i)</sup>)) if y<sup>(i)</sup> =1
+
+- log(1 - f<sub>W,b</sub>(X<sup>(i)</sup>)) if y<sup>(i)</sup> =0
+
+Gradient decent on new cost function
+
+#### Over fitting problem
+
+- collect more training data
+- fewer features - feature selection
+- Regularization - gentally reduce impact of parameters- small values of w by adding sum of all w in cost function resultinh reducing value of w in gradient decent
+
 ### Advanced Learning Algorithms
 
 <https://www.coursera.org/learn/advanced-learning-algorithms/home/week/1>
@@ -146,7 +165,7 @@ logistic regression - sigmoid function
 
 <https://www.coursera.org/learn/tensorflow-sequences-time-series-and-prediction/home/week/1>
 
-## Machine Learning Engineering for Production (MLOps) Specialization>
+## Machine Learning Engineering for Production (MLOps) Specialization
 
 ### Introduction to Machine Learning in Production
 
