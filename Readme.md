@@ -44,3 +44,15 @@
 - Natural Language Processing with Probabilistic Models
 - Natural Language Processing with Sequence Models
 - Natural Language Processing with Attention Models
+
+## [Machine Learning A-Z™: Hands-On Python & R In Data Science](/Readme.md)
+
+[Udemy](https://www.udemy.com/course/machinelearning/)
+
+## [Deep Learning A-Z™: Hands-On Artificial Neural Networks](/Readme.md)
+
+[Udemy](https://www.udemy.com/course/deeplearning/)
+
+## [Artificial Intelligence A-Z™: Learn How To Build An AI](/Readme.md)
+
+[Udemy](https://www.udemy.com/course/artificial-intelligence-az/)
