@@ -1,8 +1,8 @@
 #
 
-## Machine Learning Specialization
+## [Machine Learning Specialization](/Machine%20Learning%20Specialization/)
 
-### Supervised Machine Learning: Regression and Classification
+### [Supervised Machine Learning: Regression and Classification](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/)
 
 <https://www.coursera.org/learn/machine-learning/home/week/1>
 
@@ -14,7 +14,7 @@
 
 <https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction>
 
-## Deep Learning Specialization
+## [Deep Learning Specialization](/Deep%20Learning%20Specialization/)
 
 ### Neural Networks and Deep Learning
 
@@ -36,7 +36,7 @@
 
 <https://www.coursera.org/learn/nlp-sequence-models/home/week/1>
 
-## DeepLearning.AI TensorFlow Developer Professional Certificate
+## [DeepLearning.AI TensorFlow Developer Professional Certificate](/DeepLearning.AI%20TensorFlow%20Developer%20Professional%20Certificate/)
 
 ### Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
 
@@ -54,7 +54,7 @@
 
 <https://www.coursera.org/learn/tensorflow-sequences-time-series-and-prediction/home/week/1>
 
-## Machine Learning Engineering for Production (MLOps) Specialization
+## [Machine Learning Engineering for Production (MLOps) Specialization](/Machine%20Learning%20Engineering%20for%20Production%20(MLOps)%20Specialization/)
 
 ### Introduction to Machine Learning in Production
 
@@ -72,7 +72,7 @@
 
 <https://www.coursera.org/learn/deploying-machine-learning-models-in-production/home/week/1>
 
-## Natural Language Processing Specialization
+## [Natural Language Processing Specialization](/Natural%20Language%20Processing%20Specialization/)
 
 ### Natural Language Processing with Classification and Vector Spaces
 
