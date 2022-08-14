@@ -1,13 +1,13 @@
 # Machine Learning Specialization
 
-## Supervised Machine Learning: Regression and Classification
+## [Supervised Machine Learning: Regression and Classification](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/)
 
-<https://www.coursera.org/learn/machine-learning/home/week/1>
+[Coursera](https://www.coursera.org/learn/machine-learning)
 
 ## Advanced Learning Algorithms
 
-<https://www.coursera.org/learn/advanced-learning-algorithms/home/week/1>
+[Coursera](<https://www.coursera.org/learn/advanced-learning-algorithms)
 
 ## Unsupervised Learning, Recommenders, Reinforcement Learning
 
-<https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction>
+[Coursera](https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction)

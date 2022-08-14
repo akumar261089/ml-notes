@@ -1,18 +1,12 @@
-#
+# ML Notes
 
 ## [Machine Learning Specialization](/Machine%20Learning%20Specialization/)
 
-### [Supervised Machine Learning: Regression and Classification](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/)
+[Coursera](https://www.coursera.org/specializations/machine-learning-introduction)
 
-<https://www.coursera.org/learn/machine-learning/home/week/1>
-
-### Advanced Learning Algorithms
-
-<https://www.coursera.org/learn/advanced-learning-algorithms/home/week/1>
-
-### Unsupervised Learning, Recommenders, Reinforcement Learning
-
-<https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction>
+- [Supervised Machine Learning: Regression and Classification](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/)
+- Advanced Learning Algorithms
+- Unsupervised Learning, Recommenders, Reinforcement Learning
 
 ## [Deep Learning Specialization](/Deep%20Learning%20Specialization/)
 

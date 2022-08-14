@@ -1,8 +1,6 @@
-# Machine Learning Specialization
+# Supervised Machine Learning: Regression and Classification
 
 ## Machine learning
-
-<https://www.coursera.org/specializations/machine-learning-introduction>
 
 > Field of study that gives computers the ability to learn without being explicitly programmed. -- Arthur Samuel.
 
