@@ -62,7 +62,7 @@ vec X = vec a<sup>[0]</sup>
 ### handwritten digit recog
 
 8x8 pixel -
-
+<pre>
 255 255 255 255 255 255 255 255  
 255 255 255     255 255 255 255  
 255 255         255 255 255 255  
@@ -71,7 +71,7 @@ vec X = vec a<sup>[0]</sup>
 255 255 255     255 255 255 255  
 255 255             255 255 255  
 255 255 255 255 255 255 255 255  
-
+</pre>
 2 hidden layers
 
 Layer 0 = 8x8 = 64 values in vec X  
