@@ -35,7 +35,7 @@ feeding different data NL learns automatically
 
 g = sigmoid function =  1/(1+e<sup>-z</sup>)  
 z = W.x + b  
-
+<pre>
 for layer 1 vec a<sup>[1]</sup> = [0.3,0.7,0.2]  
 a<sub>1</sub><sup>[1]</sup> = g(W<sub>1</sub><sup>[1]</sup>.x+b<sub>1</sub><sup>[1]</sup>)=0.3  
 a<sub>2</sub><sup>[1]</sup> = g(W<sub>2</sub><sup>[1]</sup>.x+b<sub>2</sub><sup>[1]</sup>)=0.7  
@@ -44,10 +44,11 @@ a<sub>3</sub><sup>[1]</sup> = g(W<sub>3</sub><sup>[1]</sup>.x+b<sub>3</sub><sup>
 for layer 2 vec a<sup>[2]</sup> = [0.84]  
 a<sub>1</sub><sup>[2]</sup> = g(W<sub>1</sub><sup>[2]</sup>.a<sup>[1]</sup>+b<sub>2</sub><sup>[2]</sup>)=0.84  
 
+
 if (a<sup>[2]</sup> >= 0.5)  
 yes: ŷ = 1  
 no: ŷ =0  
-
+</pre>
 ## Complex neural networks activation vector computation
 
 a<sub>j</sub><sup>[l]</sup> = g(vec W<sub>j</sub><sup>[l]</sup>.vec a<sup>[l-1]</sup> + b<sub>j</sub><sup>[l]</sup>)
@@ -78,7 +79,7 @@ Layer 0 = 8x8 = 64 values in vec X
 Layer 1 = 25 units  
 Layer 2 = 15 uints  
 Layer 3 = 1 unit  
-
+<pre>
 vec a<sup>[1]</sup> = [ g(W<sub>1</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>1</sub><sup>[1]</sup>),  
                     g(W<sub>2</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>2</sub><sup>[1]</sup>)  
                     :  
@@ -97,7 +98,7 @@ a<sup>[3]</sup> = [ g(W<sub>1</sub><sup>[3]</sup>.vec a<sup>[2]</sup>+b<sub>1</s
 if (a<sup>[3]</sup> >= 0.5)  
 yes: ŷ = 1  
 no: ŷ =0  
-
+</pre>
 This is called forward propagation as we are moving form left to right
 
 ## Tensorflow
@@ -144,7 +145,7 @@ else:
 ## Data representation in numpy for tensor flow
 
 2D matrix 2X3
-
+<pre>
 1 2 3  
 4 5 6
 
@@ -170,7 +171,7 @@ tensor flow we use matrix
 to convert from tensor to numpy matrix
 
 a3.numpy()
-
+</pre>
 ## Build neural network in tensor flow
 
 ```python
