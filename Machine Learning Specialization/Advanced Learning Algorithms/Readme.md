@@ -218,3 +218,6 @@ model.fit(x,y)
 //Predict
 model.predict(x_new)
 ```
+
+## Forward propagation from scratch
+
