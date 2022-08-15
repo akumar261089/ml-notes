@@ -229,12 +229,15 @@ Layer 1 is 3 units
 a1 =  [a1_1,a1_2,a1_3]
 
 a2 = [a2_1]
+</pre>
 
-```python 
+```python
 x = np.array([200,17])
 ```
 
+<pre>
 a<sub>1</sub><sup>[1]</sup> = g(W<sub>1</sub><sup>[1]</sup> . vec x + b<sub>1</sub><sup>[1]</sup>)
+</pre>
 
 ``` python
 x = np.array([200,17])
@@ -246,7 +249,10 @@ a1_1 = sigmoid(z1_1)
 
 ```
 
+<pre>
 a<sub>2</sub><sup>[1]</sup> = g(W<sub>2</sub><sup>[1]</sup> . vec x + b<sub>2</sub><sup>[1]</sup>)
+
+</pre>
 
 ``` python
 x = np.array([200,17])
@@ -258,7 +264,9 @@ a1_2 = sigmoid(z1_2)
 
 ```
 
+<pre>
 a<sub>3</sub><sup>[1]</sup> = g(W<sub>3</sub><sup>[1]</sup> . vec x + b<sub>3</sub><sup>[1]</sup>)
+</pre>
 
 ``` python
 x = np.array([200,17])
@@ -272,7 +280,9 @@ a1 = np.array([a1_1,a1_2,a1_3])
 
 ```
 
+<pre>
 a<sub>1</sub><sup>[2]</sup> = g(W<sub>1</sub><sup>[2]</sup> . vec x + b<sub>1</sub><sup>[2]</sup>)
+</pre>
 
 ```python
 w2_1 = np.array([-7,8])
@@ -280,7 +290,6 @@ b2_1 = np.array([3])
 z2_1 = np.dot(w2_1,a1) + b2_1
 a2_1 = sigmoid(z2_1)
 ```
-</pre>
 
 ## Forward propagation in NumPy
 
@@ -297,13 +306,17 @@ W<sub>2</sub><sup>[1]</sup> = [ -3 ]
 2x1 matrix
 W<sub>3</sub><sup>[1]</sup> = [  5 ]
                               [ -6 ]
+</pre>
 
 ```python
 W1 = np.array([
               [1,-3,5 ]
               [2,4,-6]])
 ```
+
+<pre>
 b1 = [b<sub>1</sub><sup>[1]</sup>,b<sub>2</sub><sup>[1]</sup>,b<sub>3</sub><sup>[1]</sup>]
+</pre>
 
 ```python
 b1 = np.array([-1,1,2])
@@ -327,4 +340,3 @@ def sequential(a_in):
   f_x = a4
   return f_x
 ```
-</pre>
