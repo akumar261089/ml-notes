@@ -172,6 +172,7 @@ to convert from tensor to numpy matrix
 
 a3.numpy()
 </pre>
+
 ## Build neural network in tensor flow
 
 ```python
@@ -221,3 +222,109 @@ model.predict(x_new)
 
 ## Forward propagation from scratch
 
+<pre>
+
+eg - a0 is vec X is layer 0
+Layer 1 is 3 units
+a1 =  [a1_1,a1_2,a1_3]
+
+a2 = [a2_1]
+
+```python 
+x = np.array([200,17])
+```
+
+a<sub>1</sub><sup>[1]</sup> = g(W<sub>1</sub><sup>[1]</sup> . vec x + b<sub>1</sub><sup>[1]</sup>)
+
+``` python
+x = np.array([200,17])
+
+w1_1 = np.array([1,2])
+b1_1 = np.array([-1])
+z1_1 = np.dot(w1_1,x)+b
+a1_1 = sigmoid(z1_1)
+
+```
+
+a<sub>2</sub><sup>[1]</sup> = g(W<sub>2</sub><sup>[1]</sup> . vec x + b<sub>2</sub><sup>[1]</sup>)
+
+``` python
+x = np.array([200,17])
+
+w1_2 = np.array([-3,4])
+b1_2 = np.array([1])
+z1_2 = np.dot(w1_2,x)+b
+a1_2 = sigmoid(z1_2)
+
+```
+
+a<sub>3</sub><sup>[1]</sup> = g(W<sub>3</sub><sup>[1]</sup> . vec x + b<sub>3</sub><sup>[1]</sup>)
+
+``` python
+x = np.array([200,17])
+
+w1_3 = np.array([5,-6])
+b1_3 = np.array([2])
+z1_3 = np.dot(w1_3,x)+b
+a1_3 = sigmoid(z1_3)
+
+a1 = np.array([a1_1,a1_2,a1_3])
+
+```
+
+a<sub>1</sub><sup>[2]</sup> = g(W<sub>1</sub><sup>[2]</sup> . vec x + b<sub>1</sub><sup>[2]</sup>)
+
+```python
+w2_1 = np.array([-7,8])
+b2_1 = np.array([3])
+z2_1 = np.dot(w2_1,a1) + b2_1
+a2_1 = sigmoid(z2_1)
+```
+</pre>
+
+## Forward propagation in NumPy
+
+<pre>
+
+W1 = [ W<sub>1</sub><sup>[1]</sup>,W<sub>2</sub><sup>[1]</sup>,W<sub>3</sub><sup>[1]</sup> ]
+
+2x1 matrix
+W<sub>1</sub><sup>[1]</sup> = [ 1 ]
+                              [ 2 ]
+2x1 matrix
+W<sub>2</sub><sup>[1]</sup> = [ -3 ]
+                              [ 4  ]
+2x1 matrix
+W<sub>3</sub><sup>[1]</sup> = [  5 ]
+                              [ -6 ]
+
+```python
+W1 = np.array([
+              [1,-3,5 ]
+              [2,4,-6]])
+```
+b1 = [b<sub>1</sub><sup>[1]</sup>,b<sub>2</sub><sup>[1]</sup>,b<sub>3</sub><sup>[1]</sup>]
+
+```python
+b1 = np.array([-1,1,2])
+
+a_in = np.array([-2,4])
+
+def dense(a_in,W,b,g):
+  units = W.shape[1]
+  a_out = np.zeros(units)
+  for j in range(units):
+    w = W[:,j]
+    z = np.dot(w,a_in) +b[j]
+    a_out[j] = g(z)
+  return a_out
+
+def sequential(a_in):
+  a1 = dense(a_in,W1,b1)
+  a2 = dense(a1,W2,b2)
+  a3 = dense(a2,W3,b3)
+  a4 = dense(a3,W4,b4)
+  f_x = a4
+  return f_x
+```
+</pre>
