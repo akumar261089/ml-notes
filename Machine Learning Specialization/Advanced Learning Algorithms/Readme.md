@@ -17,8 +17,8 @@ Number of hidden layers and number of neurons in hidden layers are architecture 
 ### Demand prediction
 
 X = [price, shipping cost, marketing, material]  
-L1 activations  =[affordablity(price, shipping cost),awareness(marketing), quality(Price, material)]  
-OL = probablity of being top seller
+L1 activations  =[affordability(price, shipping cost),awareness(marketing), quality(Price, material)]  
+OL = probability of being top seller
 
 ### Face recognition
 
@@ -58,9 +58,9 @@ j unit of neuron
 g activation function = sigmoid function  
 vec X = vec a<sup>[0]</sup>  
 
-## Neural network to make predections or inferences
+## Neural network to make predictions or inferences
 
-### handwritten digit recog
+### handwritten digit recognition
 
 8x8 pixel -
 <pre>
@@ -77,7 +77,7 @@ vec X = vec a<sup>[0]</sup>
 
 Layer 0 = 8x8 = 64 values in vec X  
 Layer 1 = 25 units  
-Layer 2 = 15 uints  
+Layer 2 = 15 units  
 Layer 3 = 1 unit  
 <pre>
 vec a<sup>[1]</sup> = [ g(W<sub>1</sub><sup>[1]</sup>.vec a<sup>[0]</sup>+b<sub>1</sub><sup>[1]</sup>),  
@@ -359,7 +359,92 @@ def dense (A_in,W,B):
 
 [[1,0,1]]
 
-## AGI - artificial general inteligence
+## Matrix multiplication in  numpy
 
-1. ANI - artificial narrow inteligence eg - smart speaker, self driving car, we search
-2. AGI - artifical general inteligence - Do anything a human can do
+```python
+
+A=np.array([1,-1,0.1],
+           [2,-2,0.2])
+AT = np.array([1,2],
+              [-1,-2],
+              [0.1,0.2])
+
+//AT= A.T
+
+W= np.array([3,5,7,9],
+            [4,6,8,0])
+Z = np.matmul(AT,W)
+```
+
+## AGI - artificial general intelligence
+
+1. ANI - artificial narrow intelligence eg - smart speaker, self driving car, we search
+2. AGI - artificial general intelligence - Do anything a human can do
+
+## Tensorflow implementation
+
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow..keras.losses import BinaryCrossentropy
+
+// Step one specify the model how to compute
+model = Sequential([
+  Dense(units=25,activation='sigmoid')
+  Dense(units=15,activation='sigmoid')
+  Dense(units=1,activation='sigmoid')
+])
+
+//Step two compile the model with loss function
+model.compile(loss=BinaryCrossentropy())
+
+//Step three fit/train the model with training data  
+model.fit(X,Y,epoch=100)
+//epochs : number of steps in gradient decent
+```
+
+## Model training steps
+
+<pre>
+
+1. Specify how to compute output given input X and parameters w,b
+    f<sub>w,b</sub>(X) =?
+
+    Logistic Regression
+    z = np.dot(w,x) +b
+    f_x = 1/(1+np.exp(-z))
+
+    Neural Network
+    model = Sequential([
+      Dense(...)
+      Dense(...)
+    ])
+
+2. Specify loss function and cost
+   L(f<sub>w,b</sub>(X),y)
+   J(W,b) = 1/m(Sum for i 0 to m L(f<sub>w,b</sub>(X<sup>(i)</sup>),y<sup>(i)</sup>))
+
+    Logistic Regression
+    loss = -y*np.log(f_x) - (1-y)*np.log(1-f_x)
+
+    Neural Network
+    model.compile(loss=BinaryCrossentropy())
+
+    for regression we can use mean square error loss
+    from tensorflow..keras.losses import MeanSquareError
+    model.compile(loss=MeanSquareError())
+
+3. Train on data to minimize J(W,b)
+
+    Logistic Regression
+    w = w - alpha*dj_dw
+    b = b - alpha*dj_db
+
+    Neural Network
+    // compute derivatives for gradient decent using back propagation
+    model.fit(X,Y,epoch=100)
+
+</pre>
+
+## Activation Functions

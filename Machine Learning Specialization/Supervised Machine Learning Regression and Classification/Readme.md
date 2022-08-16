@@ -23,11 +23,11 @@ eg - Spam Filter, Speech recognition, machine translation(language), online adve
 
 ### Unsupervised learning
 
-Were given data that isn't associated with any output labels y and find something interseting in unlableled data eg - Google news
+Were given data that isn't associated with any output labels y and find something interesting in unlabeled data eg - Google news
 
 ### Type of Unsupervised learning
 
-- Clustering(Group similar data points together) eg - Google news, DNA microarray clustering, customer grouping
+- Clustering(Group similar data points together) eg - Google news, DNA micro array clustering, customer grouping
 - Anomaly Detection(Find unusual data points) eg - Fraud detection
 - Dimensionality Reduction(Compress data using fewer numbers)
 
@@ -73,7 +73,7 @@ f<sub>W,b</sub>(X)=np.dot(w,x) + b
 
 #### Feature scaling
 
-valuse should be between -1 < x < 1 by using ans dhould not be very small
+values should be between -1 < x < 1 by using ans should not be very small
 
 - divide by max
 - mean normalization
@@ -87,7 +87,7 @@ eg - instead of length & width we can directly use area. l , w, a we can get bet
 
 do we need more steps or not
 
-- learing curve
+- learning curve
 - Automatic convergence test
 
 Learing rate  -- 0.001 or 0.003 or 0.01 or 0.03 or 0.1 or 0.3 or 1 
@@ -98,7 +98,7 @@ logistic regression - sigmoid function
 
 Decision boundary
 
-Cost function for logisdtic regression -squared error cost
+Cost function for logistic regression -squared error cost
 J(w,b) =  (1/m) * sum over i = 1 to m 1/2( ŷ<sup>(i)</sup> - y<sup>(i)</sup>)<sup>2</sup>
 
 Loss funct
@@ -113,4 +113,4 @@ Gradient decent on new cost function
 
 - collect more training data
 - fewer features - feature selection
-- Regularization - gentally reduce impact of parameters- small values of w by adding sum of all w in cost function resultinh reducing value of w in gradient decent
+- Regularization - gently reduce impact of parameters- small values of w by adding sum of all w in cost function result in reducing value of w in gradient decent
