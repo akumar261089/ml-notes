@@ -299,13 +299,13 @@ W1 = [ W<sub>1</sub><sup>[1]</sup>,W<sub>2</sub><sup>[1]</sup>,W<sub>3</sub><sup
 
 2x1 matrix
 W<sub>1</sub><sup>[1]</sup> = [ 1 ]
-                              [ 2 ]
+        [ 2 ]
 2x1 matrix
 W<sub>2</sub><sup>[1]</sup> = [ -3 ]
-                              [ 4  ]
+        [ 4  ]
 2x1 matrix
 W<sub>3</sub><sup>[1]</sup> = [  5 ]
-                              [ -6 ]
+        [ -6 ]
 </pre>
 
 ```python
@@ -448,3 +448,150 @@ model.fit(X,Y,epoch=100)
 </pre>
 
 ## Activation Functions
+
+We will choose activation function based on our requirement
+
+- Output layer :
+
+<pre>
+Binary Classification can use Sigmoid y can be (0,1)
+Regression can use linear y can be (- or +)
+Regression can use ReLU where y can be (0 or +)
+</pre>
+
+- Hidden Layers :
+
+<pre>
+Mostly used ReLU as it is not flat
+Sigmoid used sometimes
+</pre>
+
+don't use linear activation functions in hidden layers
+
+## Multi class classification problem
+
+Where we can have multiple classes eg - hand written number identification - number can be 0,1,2 etc or check defects
+so any scenario where more than one possible outputs but small finite number
+
+For that we can have n number of outputs
+
+### Softmax regression
+
+Logistic regression can have only 2 possible outputs
+as function used is
+
+```python
+a1=g(z) = 1/(1+np.exp(-z))
+```
+
+in case of softmax we can have n number of outputs example for 4  
+
+a1 = g(z1) = e<sup>z1</sup>/(e<sup>z1</sup> + e<sup>z2</sup> + e<sup>z3</sup> + e<sup>z4</sup> )  
+a2 = g(z2) = e<sup>z2</sup>/(e<sup>z1</sup> + e<sup>z2</sup> + e<sup>z3</sup> + e<sup>z4</sup> )  
+a3 = g(z3) = e<sup>z3</sup>/(e<sup>z1</sup> + e<sup>z2</sup> + e<sup>z3</sup> + e<sup>z4</sup> )  
+a4 = g(z4) = e<sup>z4</sup>/(e<sup>z1</sup> + e<sup>z2</sup> + e<sup>z3</sup> + e<sup>z4</sup> )  
+
+Generalize  
+a<sub>j</sub> = e<sup>Zj</sup>/sum from k= 1 to N e<sup>Zk</sup>
+
+#### Cost calculation
+
+loss for logistic regression = -y log a<sub>1</sub> - (1-y)log(1- a<sub>1</sub>)
+J(W,b) = average loss
+
+loss(a<sub1>1</sub>,...a<sub1>N</sub>,y) = -log a<sub>N</sub> if y = N
+
+### Neural network for multi class
+
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow..keras.losses import SparseCategoricalCrossentropy
+
+// Step one specify the model how to compute
+model = Sequential([
+  Dense(units=25,activation='relu')
+  Dense(units=15,activation='relu')
+  Dense(units=10,activation='softmax')
+])
+
+//Step two compile the model with loss function
+model.compile(loss=SparseCategoricalCrossentropy())
+
+//Step three fit/train the model with training data  
+model.fit(X,Y,epoch=100)
+//epochs : number of steps in gradient decent
+```
+
+but we can improve this by using different method and avoid numerical round off error caused while computing in machines
+
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow..keras.losses import SparseCategoricalCrossentropy
+
+// Step one specify the model how to compute
+model = Sequential([
+  Dense(units=25,activation='relu')
+  Dense(units=15,activation='relu')
+  Dense(units=10,activation='linear')
+])
+
+//Step two compile the model with loss function
+model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
+
+//Step three fit/train the model with training data  
+model.fit(X,Y,epoch=100)
+//epochs : number of steps in gradient decent
+
+logits = model(X)
+
+f_x = tf.nn.softmax(logits)
+```
+
+Improved method for logistic regression
+
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow..keras.losses import BinaryCrossentropy
+
+// Step one specify the model how to compute
+model = Sequential([
+  Dense(units=25,activation='relu')
+  Dense(units=15,activation='relu')
+  Dense(units=1,activation='linear')
+])
+
+//Step two compile the model with loss function
+model.compile(loss=BinaryCrossentropy(from_logits=True))
+
+//Step three fit/train the model with training data  
+model.fit(X,Y,epoch=100)
+//epochs : number of steps in gradient decent
+
+logits = model(X)
+
+f_x = tf.nn.sigmoid(logits)
+
+```
+
+## Multi label classification problem
+
+if in once input we have multiple labels eg - scanning a photo with multiple objects like human,car,bus etc
+
+We can combine these using sigmoid activation for output layer and result is a vector
+
+## Advanced Model optimization algos
+
+Adam this is safe choice to use
+
+```python
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
+  loss=tf.keras.losses.SparseCategoryCrossentropy(from_logits=True))
+```
+
+## Tips to build machine learning systems
