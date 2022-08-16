@@ -1,4 +1,4 @@
-# Advanced Learning Algorithms
+# [Advanced Learning Algorithms](https://www.coursera.org/learn/advanced-learning-algorithms)
 
 ## Neuron Networks
 
