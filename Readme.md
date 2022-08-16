@@ -56,3 +56,11 @@
 ## [Artificial Intelligence A-Z™: Learn How To Build An AI](/Readme.md)
 
 [Udemy](https://www.udemy.com/course/artificial-intelligence-az/)
+
+## [Practical Data Science on the AWS Cloud Specialization](/Practical%20Data%20Science%20on%20the%20AWS%20Cloud%20Specialization/Readme.md)
+
+[Coursera](https://www.coursera.org/specializations/practical-data-science)
+
+- Analyze Datasets and Train ML Models using AutoML
+- Build, Train, and Deploy ML Pipelines using BERT
+- Optimize ML Models and Deploy Human-in-the-Loop Pipelines
