@@ -643,4 +643,58 @@ J<sub>train</sub>(W,b) = 1/m<sub>train</sub>(sum where i =1 to m<sub>train</sub>
 
 #### Model selection
 
+To Choose model we can check value of the cost function (J<sub>test</sub>(W,b)) for different degree. eg -
 
+1. For d=1 f<sub>W,b</sub>(X) = W<sub>1</sub>X<sub>1</sub> + b
+2. For d=2 f<sub>W,b</sub>(X) = W<sub>1</sub>X + W<sub>2</sub>X<sup>2</sup> + b
+3. For d=3 f<sub>W,b</sub>(X) = W<sub>1</sub>X + W<sub>2</sub>X<sup>2</sup> + W<sub>3</sub>X<sup>3</sup> + b
+.
+.
+.
+10. For d=10 f<sub>W,b</sub>(X) = W<sub>1</sub>X + W<sub>2</sub>X<sup>2</sup> + ....+  W<sub>10</sub>X<sup>10</sup> + b
+
+##### We should split data in 3 sets - training(60) cross validation(20) and test set (20)
+
+In this case we can use (J<sub>cv</sub>(W,b)) to et cross validation error and thi will give more relevant output  
+We can use this same model to choose neural network architecture
+
+#### Running diagnostics in machine learning model - Bias & variance
+
+Under fit = high Bias: J<sub>train</sub> is high and J<sub>cv</sub> is high  
+over fit - high variance: J<sub>train</sub> is low and J<sub>cv</sub> is high, J<sub>cv</sub>>> J<sub>train</sub>  
+high bias & high variance if J<sub>train</sub> is hgh and J<sub>cv</sub> >> J<sub>train</sub>
+eg -
+<pre>
+
+d = 1,J_train is high, j_CV is high
+d = 2,J_train is low, j_CV is low
+d = 4,J_train is low, j_CV is high  
+
+so we can see d =2 is a better solution
+</pre>
+
+#### Regularization and bias/variance
+
+J(W,b) = 1/2m(sum for i = 0 to m (f<sub>W,b</sub>(X<sup>(i)</sup>)-y<sup>(i)</sup>)<sup>2</sup> - lambda/2m(sum for j =1 to n W<sub>j</sub><sup>2</sup>) )  
+
+if lambda is large curve will under fit as a result high bias  
+if lambda is small curve will over fit as a result high variance  
+so we take intermediate lambda it will be just right
+
+to find correct value of lambda cross validation is helpful
+
+1. Try lambda = 0
+2. Try lambda = 0.01
+3. Try lambda = 0.02
+4. Try lambda = 0.04
+5. Try lambda = 0.08
+
+and check J<sub>cv</sub>(W<sup><1></sup>,b<sup><1></sup>)  
+<pre>
+lambda = 10,  J_train is high, j_CV is high
+lambda = 0.08,J_train is low, j_CV is low
+lambda = 0,   J_train is low, j_CV is high  
+</pre>
+
+#### Establishing a baseline level of performance
+ 
