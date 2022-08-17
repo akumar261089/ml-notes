@@ -602,12 +602,12 @@ J(W,b) = 1/2m(sum for i = 0 to m (f<sub>W,b</sub>(X<sup>(i)</sup>)-y<sup>(i)</su
 
 #### but in this we get large errors what to do next
 
-- Get mode training examples
-- Try smaller sets of features
-- Try getting additional features
-- try adding polynomial features(x<sub>1</sub><sup>2</sup>,x<sub>2</sub><sup>2</sup>,x<sub>1</sub>,x<sub>2</sub> etc)
-- Try decreasing lambda
-- try increasing lambda
+- Get mode training examples - will help in case of high variance
+- Try smaller sets of features or reduce polynomial  - will help in high variance
+- Try getting additional features - will help high bias
+- try adding polynomial features(x<sub>1</sub><sup>2</sup>,x<sub>2</sub><sup>2</sup>,x<sub>1</sub>,x<sub>2</sub> etc) - high bias
+- Try decreasing lambda - high bias
+- try increasing lambda -  high variance
 
 #### Evaluate machine learning model
 
@@ -691,10 +691,148 @@ to find correct value of lambda cross validation is helpful
 
 and check J<sub>cv</sub>(W<sup><1></sup>,b<sup><1></sup>)  
 <pre>
-lambda = 10,  J_train is high, j_CV is high
+lambda = 10,  J_train is high, j_CV is high high bias under fit
 lambda = 0.08,J_train is low, j_CV is low
-lambda = 0,   J_train is low, j_CV is high  
+lambda = 0,   J_train is low, j_CV is high  high variance over fit
 </pre>
 
 #### Establishing a baseline level of performance
- 
+
+#### learning curve
+
+as training set size increase training error increases  
+as training set size increase cross validation error decreases  
+
+##### high bias
+
+in case of high bias as we increase dataset avg training error will become constant or flat  
+in case of high bias as we increase dataset avg cross validation error will become constant or flat  
+
+Increasing trai data will make J<sub>train</sub> and J<sub>cv</sub> parallel
+if you have high bias, we need to do something else  
+
+##### high variance
+
+Increasing training set size will help and as we increase training size cross validation error will become equal to j<sub>train</sub>
+
+#### high variance & bias in neural network
+
+Large neural networks are low bias  
+
+if J<sub>train</sub> is high so it is high bias  
+then increase network  
+else if j train is low and j cv is high so it is high variance problem  
+then increase training set size  
+
+how to check if my neural network is too big ?  
+large NN will work as good as small NN as along as regularization is chosen correctly
+
+#### Neural network regularization
+
+J(W,B)= 1/m(Sum for i from 1 to m L(f(X<sup>(i)</sup>),y<sup>(i)</sup>)) + lambda/2m((Sum of all Weights)<sup>2</sup>)  
+
+##### Unregularized MNIST model
+
+```python
+layer_1 = Dense(units=25,activation="relu")
+layer_2 = Dense(units=15,activation="relu")
+layer_3 = Dense(units=1,activation="sigmoid")
+model = Sequential([layer_1,layer_2, layer_3])
+```
+
+##### Regularized MNIST model
+
+```python
+layer_1 = Dense(units=25,activation="relu",kernel_regularizer=L2(0.01))
+layer_2 = Dense(units=15,activation="relu",kernel_regularizer=L2(0.01))
+layer_3 = Dense(units=1,activation="sigmoid",kernel_regularizer=L2(0.01))
+model = Sequential([layer_1,layer_2, layer_3])
+```
+
+### ML Development Process
+
+#### Iterative loop of ML development 
+
+<pre>
+Choose architecture(mode,data, etc.)------------> tain model -------------> diagnostics(vias,variance and error analysis)---
+      ^                                                                                                                     |
+      |---------------------------------------------------------------------------------------------------------------------
+</pre>
+
+#### Error Analysis
+
+check where your model is failing and try to get more data on that manually but this is not possible for issue which humans can not identify  
+
+#### Adding Data
+
+We can add specific data for a particular problem given by error analysis to increase performance  
+
+##### Data augmentation 
+
+We can rotate image, enlarge, shrink, shading distortion or mirror image eg for letter identification  
+We can add random worping an image  
+
+We can add different type of noise to audio clips to increase data set
+
+###### Data synthesis
+
+we can create synthetic data eg for photo ocr.
+
+##### We can engineer data to get more dataset and train existing model better
+
+#### Transfer learning
+
+We can using existing neural network by just replacing output layer, and have two options
+
+- only train output layer's parameters this is preferred in case of very small data set
+- Train all parameters this is preferred if we have relatively large data set
+
+We have two steps
+
+1. Supervised pre training or download
+2. Fine tuning new NN
+
+#### ML project cycle
+
+1. Scope project
+2. Data collection
+3. Train model - we might need more data after this to improve model performance
+4. Deploy production env - we might need to train again by feedback or need more data to improve performance
+
+#### Audit ML model fot fairness, bias and ethics
+
+#### Skewed datasets
+
+If we have very rare scenario then lower percentage of error is not relent eg - rare disease with only 0.5% chance and model is giving 1% error is not useful  
+
+To overcome this we use precision & recall
+<pre>
+_________________________________
+|True positive  | False positive |
+__________________________________
+|False negative | True Negative  |
+_________________________________
+</pre>
+
+##### Precision = true positive/predicted positive(True positive + False positive)
+
+high precision would mean that if a diagnosis of patients have that rare disease, probably the patient does have it and it's an accurate diagnosis.
+
+##### Recall = true positive /actual positive (true positive + false negative)
+
+High recall means that if there's a patient with that rare disease, probably the algorithm will correctly identify that they do have that disease
+
+#### Trading off precision and recall
+
+Suppose we want to predict y =1 only if very confident -> hight precision, lower recall  
+and when we want to avoid missing too many cases of rare disease -> lower precision, higher recall  
+
+We can set a thresh hold to do so.
+
+##### F1 score
+
+this is used to automatically trade off precision and prediction  
+
+F1 score =1/( 1/2(1/p+ 1/r))  
+
+this is also called harmonic mean of P & R

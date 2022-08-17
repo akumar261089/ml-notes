@@ -99,3 +99,5 @@ a=g(z)=z=w.x+b
 
 2. Convolutional Layers(few inputs are shared with few units)
  this is faster in computation as all inputs are not provided and needs less training as specific type of input is fet this also reduces cases of over fitting- network with convolution layers we call CNN
+
+## high bias & high Variance
