@@ -595,3 +595,52 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
 ```
 
 ## Tips to build machine learning systems
+
+### 1st example regular linear regression on housing prices
+
+J(W,b) = 1/2m(sum for i = 0 to m (f<sub>W,b</sub>(X<sup>(i)</sup>)-y<sup>(i)</sup>)<sup>2</sup> - lambda/2m(sum for j =1 to n W<sub>j</sub><sup>2</sup>) )
+
+#### but in this we get large errors what to do next
+
+- Get mode training examples
+- Try smaller sets of features
+- Try getting additional features
+- try adding polynomial features(x<sub>1</sub><sup>2</sup>,x<sub>2</sub><sup>2</sup>,x<sub>1</sub>,x<sub>2</sub> etc)
+- Try decreasing lambda
+- try increasing lambda
+
+#### Evaluate machine learning model
+
+Split data into training set and test set(70-30 or 80-20)
+
+##### Train test procedure for regression
+
+###### Fit parameters by minimizing cost function J(W,b)  
+
+J(W,b) = min<sub>W,b</sub>(1/2m<sub>train</sub>(sum where i =1 to m (f<sub>W,b</sub>(X<sup>(i)</sup>)-y<sup>(i)</sup>)<sup>2</sup> - lambda/2m(sum for j =1 to n W<sub>j</sub><sup>2</sup>)))
+
+###### Compute test error
+
+J<sub>test</sub>(W,b) = 1/2m<sub>test</sub>(sum where i =1 to m<sub>test</sub> (f<sub>W,b</sub>(X<sub>test</sub><sup>(i)</sup>)-y<sub>test</sub><sup>(i)</sup>)<sup>2</sup>)
+
+###### Compute train error
+
+J<sub>train</sub>(W,b) = 1/2m<sub>train</sub>(sum where i =1 to m<sub>train</sub> (f<sub>W,b</sub>(X<sub>train</sub><sup>(i)</sup>)-y<sub>train</sub><sup>(i)</sup>)<sup>2</sup>)
+
+##### Train test procedure for classification
+
+###### Fit parameters by minimizing cost function J(W,b)  to find w,b
+
+J(W,b) = -1/m(sum where i =1 to m (y<sup>(i)</sup>log(f<sub>W,b</sub>(X<sup>(i)</sup>)))+(1-y<sup>(i)</sup>)log( 1 - f<sub>W,b</sub>(X<sup>(i)</sup>)) + lambda/2m(sum for j =1 to n W<sub>j</sub><sup>2</sup>)))
+
+###### Compute test error for classification
+
+J<sub>test</sub>(W,b) = 1/m<sub>test</sub>(sum where i =1 to m<sub>test</sub> (y<sub>test</sub><sup>(i)</sup>log(f<sub>W,b</sub>(X<sub>test</sub><sup>(i)</sup>)))+(1-y<sub>test</sub><sup>(i)</sup>)log( 1 - f<sub>W,b</sub>(X<sub>test</sub><sup>(i)</sup>)
+
+###### compute train error for classification
+
+J<sub>train</sub>(W,b) = 1/m<sub>train</sub>(sum where i =1 to m<sub>train</sub> (y<sub>train</sub><sup>(i)</sup>log(f<sub>W,b</sub>(X<sub>train</sub><sup>(i)</sup>)))+(1-y<sub>train</sub><sup>(i)</sup>)log( 1 - f<sub>W,b</sub>(X<sub>train</sub><sup>(i)</sup>)
+
+#### Model selection
+
+
