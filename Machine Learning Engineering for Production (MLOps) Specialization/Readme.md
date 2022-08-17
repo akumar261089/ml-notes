@@ -2,16 +2,16 @@
 
 ## Introduction to Machine Learning in Production
 
-<https://www.coursera.org/learn/introduction-to-machine-learning-in-production/home/week/1>
+[Coursera](https://www.coursera.org/learn/introduction-to-machine-learning-in-production)
 
 ## Machine Learning Data Lifecycle in Production
 
-<https://www.coursera.org/learn/machine-learning-data-lifecycle-in-production/home/week/1>
+[Coursera](https://www.coursera.org/learn/machine-learning-data-lifecycle-in-production)
 
 ## Machine Learning Modelling Pipelines in Production
 
-<https://www.coursera.org/learn/machine-learning-modeling-pipelines-in-production/home/week/1>
+[Coursera](https://www.coursera.org/learn/machine-learning-modeling-pipelines-in-production)
 
 ## Deploying Machine Learning Models in Production
 
-<https://www.coursera.org/learn/deploying-machine-learning-models-in-production/home/week/1>
+[Coursera](https://www.coursera.org/learn/deploying-machine-learning-models-in-production)

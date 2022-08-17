@@ -12,11 +12,20 @@
 
 [Coursera](https://www.coursera.org/specializations/deep-learning)
 
-- Neural Networks and Deep Learning
-- Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
-- Structuring Machine Learning Projects
-- Convolutional Neural Networks
-- Sequence Models
+- [Neural Networks and Deep Learning](/Deep%20Learning%20Specialization/Neural%20Networks%20and%20Deep%20Learning/)
+- [Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization](/Deep%20Learning%20Specialization/Improving%20Deep%20Neural%20Networks-%20Hyperparameter%20Tuning%2C%20Regularization%20and%20Optimization/)
+- [Structuring Machine Learning Projects](/Deep%20Learning%20Specialization/Structuring%20Machine%20Learning%20Projects/)
+- [Convolutional Neural Networks](/Deep%20Learning%20Specialization/Convolutional%20Neural%20Networks/)
+- [Sequence Models](/Deep%20Learning%20Specialization/Sequence%20Models/)
+
+## [Machine Learning Engineering for Production (MLOps) Specialization](/Machine%20Learning%20Engineering%20for%20Production%20(MLOps)%20Specialization/)
+
+[Coursera](https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops)
+
+- [Introduction to Machine Learning in Production]()
+- [Machine Learning Data Lifecycle in Production]()
+- [Machine Learning Modeling Pipelines in Production]()
+- [Deploying Machine Learning Models in Production]()
 
 ## [DeepLearning.AI TensorFlow Developer Professional Certificate](/DeepLearning.AI%20TensorFlow%20Developer%20Professional%20Certificate/)
 
@@ -26,15 +35,6 @@
 - Convolutional Neural Networks in TensorFlow
 - Natural Language Processing in TensorFlow
 - Sequences, Time Series and Prediction
-
-## [Machine Learning Engineering for Production (MLOps) Specialization](/Machine%20Learning%20Engineering%20for%20Production%20(MLOps)%20Specialization/)
-
-[Coursera](https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops)
-
-- Introduction to Machine Learning in Production
-- Machine Learning Data Lifecycle in Production
-- Machine Learning Modeling Pipelines in Production
-- Deploying Machine Learning Models in Production
 
 ## [Natural Language Processing Specialization](/Natural%20Language%20Processing%20Specialization/)
 
