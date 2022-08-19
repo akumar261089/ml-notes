@@ -836,3 +836,78 @@ this is used to automatically trade off precision and prediction
 F1 score =1/( 1/2(1/p+ 1/r))  
 
 this is also called harmonic mean of P & R
+
+## Decision Tree
+
+### Structure of decision tree
+
+- Root node
+- Decision nodes
+- leaf nodes
+
+### Steps to create a decision tree
+
+1. Decide feature to be used at root node. and split data set according to this feature
+
+2. feature to be used for left branch. Split data set based on that feature.
+
+3. we can create leaf node if get 100% examples result same.
+
+- How do you choose what features to split on at each node?  
+Chose feature which gives maximum purity(or minimize impurity)  
+
+- When do you stop splitting?
+    - when a node is 100% one class
+    - when splitting a node will result in the tree exceeding a maximum depth
+    - when improvement in purity score are below a threshold.
+    - when number of examples in a node is below threshold.
+
+### Measure of impurity :  Entropy
+
+Entropy is measure impurity in data set  
+
+example -  
+
+p<sub>1</sub> = fraction of examples that are cats
+
+Entropy of cats = H(p<sub>1</sub>)  
+
+if we have 6 dogs and 0 cats  p<sub>1</sub> = 0     H{p<sub>1</sub>} =0  
+if we have 4 dogs and 2 cats  p<sub>1</sub> = 2/6  H{p<sub>1</sub>} =0.92  
+if we have 3 dogs and 3 cats  p<sub>1</sub> = 3/6  H{p<sub>1</sub>} = 1  
+if we have 1 dogs and 5 cats  p<sub>1</sub> = 5/6  H{p<sub>1</sub>} = 0.65  
+if we have 0 dogs and 6 cats  p<sub>1</sub> = 6/6  H{p<sub>1</sub>} = 0  
+
+p<sub>0</sub> = 1 - p<sub>1</sub>
+
+H(p<sub>1</sub>) = -p<sub>1</sub>log<sub>2</sub>(p<sub>1</sub>) - p<sub>0</sub>log<sub>2</sub>(p<sub>0</sub>)  
+                 = -p<sub>1</sub>log<sub>2</sub>(p<sub>1</sub>) - (1- p<sub>1</sub>)log<sub>2</sub>(1- p<sub>1</sub>)  
+NOTE: 0log(0) = 0
+
+### Choosing a split : information gaining
+
+We check entropy at each level and then take avg to find minimum entropy with each feature  
+Information gain measures reduction entropy  
+
+Information Gain = H(p<sub>1</sub><sup>root</sup>) - (w<sup>left</sup>H(p<sub>1</sub><sup>left</sup>) +w<sup>right</sup>H(p<sub>1</sub><sup>right</sup>) )  
+
+Example -  
+Ear shape - pointy(4/5 cats)p<sub>1</sub><sup>left</sup>>   &   floppy(1/2 cat)p<sub>1</sub><sup>right</sup>>  
+                      H(.8)=.72                             &               H(0.2)=0.73  
+                      w<sup>left</sup> = 5/10               &         w<sup>right</sup> = 5/10  
+                                               5/10(H(.8)) + 5/10(H(.2))  
+              H(p<sub>1</sub><sup>root</sup>) = H(.5)  
+Information gain = H(.5) - (5/10(H(.8)) + 5/10(H(.2)))  = .28  
+Face shape - Round(4/7 cats)             &   not round(1/3 cat)  
+              H(.57)=.99                    &    H(0.33)=0.92  
+              7/10(H(.57)) + 3/10(H(.33))  
+Information gain = H(.5) - (7/10(H(.57)) + 3/10(H(.33)))  = .03  
+Whiskers shape - present(3/4 cats)             &   absent(2/6 cat)  
+                 H(.75)=.81                    &    H(0.33)=0.92  
+                 4/10(H(.75)) + 6/10(H(.33))  
+Information gain = H(.5) - (4/10(H(.75)) + 6/10(H(.33)))  =.12  
+
+We should start with feature that gives largest reduction entropy  
+If reduction entropy is too small we stop splitting
+
+### Putting it all together - crate large decision tree

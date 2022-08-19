@@ -22,8 +22,8 @@
 
 [Coursera](https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops)
 
-- [Introduction to Machine Learning in Production]()
-- [Machine Learning Data Lifecycle in Production]()
+- [Introduction to Machine Learning in Production](/Machine%20Learning%20Engineering%20for%20Production%20(MLOps)%20Specialization/Introduction)
+- [Machine Learning Data Lifecycle in Production](/Machine%20Learning%20Engineering%20for%20Production%20(MLOps)%20Specialization/)
 - [Machine Learning Modeling Pipelines in Production]()
 - [Deploying Machine Learning Models in Production]()
 
