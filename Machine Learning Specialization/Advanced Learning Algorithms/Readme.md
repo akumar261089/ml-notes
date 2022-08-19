@@ -892,20 +892,35 @@ Information gain measures reduction entropy
 Information Gain = H(p<sub>1</sub><sup>root</sup>) - (w<sup>left</sup>H(p<sub>1</sub><sup>left</sup>) +w<sup>right</sup>H(p<sub>1</sub><sup>right</sup>) )  
 
 Example -  
+
 Ear shape - pointy(4/5 cats)p<sub>1</sub><sup>left</sup>>   &   floppy(1/2 cat)p<sub>1</sub><sup>right</sup>>  
-                      H(.8)=.72                             &               H(0.2)=0.73  
-                      w<sup>left</sup> = 5/10               &         w<sup>right</sup> = 5/10  
-                                               5/10(H(.8)) + 5/10(H(.2))  
-              H(p<sub>1</sub><sup>root</sup>) = H(.5)  
+
+ H(.8)=.72    & H(0.2)=0.73  
+
+ w<sup>left</sup> = 5/10 & w<sup>right</sup> = 5/10  
+
+ 5/10(H(.8)) + 5/10(H(.2))  
+
+ H(p<sub>1</sub><sup>root</sup>) = H(.5)  
+
 Information gain = H(.5) - (5/10(H(.8)) + 5/10(H(.2)))  = .28  
+
 Face shape - Round(4/7 cats)             &   not round(1/3 cat)  
-              H(.57)=.99                    &    H(0.33)=0.92  
-              7/10(H(.57)) + 3/10(H(.33))  
+
+H(.57)=.99 &    H(0.33)=0.92  
+
+7/10(H(.57)) + 3/10(H(.33))  
+
 Information gain = H(.5) - (7/10(H(.57)) + 3/10(H(.33)))  = .03  
-Whiskers shape - present(3/4 cats)             &   absent(2/6 cat)  
-                 H(.75)=.81                    &    H(0.33)=0.92  
-                 4/10(H(.75)) + 6/10(H(.33))  
+
+Whiskers shape - present(3/4 cats) &   absent(2/6 cat)  
+
+H(.75)=.81&    H(0.33)=0.92  
+
+4/10(H(.75)) + 6/10(H(.33))  
+
 Information gain = H(.5) - (4/10(H(.75)) + 6/10(H(.33)))  =.12  
+
 
 We should start with feature that gives largest reduction entropy  
 If reduction entropy is too small we stop splitting
